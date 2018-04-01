@@ -1,0 +1,13 @@
+﻿using System;
+
+
+namespace StatiKani.Source.JSONObjects {
+	class Collection<DataType> {
+		public string Object = null;
+		public string url = null;
+		public Pages pages = new Pages();
+		public int total_count = -1;
+		public DateTime data_updated_at = new DateTime();
+		public DataType[] data = new DataType[0];
+	}
+}
