@@ -1,4 +1,5 @@
-﻿using StatiKani.Source.JSONObjects;
+﻿using StatiKani.Source.Items.SubItems;
+using StatiKani.Source.JSONObjects;
 
 
 namespace StatiKani.Source.Items {
@@ -6,6 +7,7 @@ namespace StatiKani.Source.Items {
 		public ItemSubjectRadical(ResourceData<SubjectData> data) : base(data) { }
 
 
-		public ImageData[] CharacterImages => this.data.data.character_images;
+		public int CharacterImageCount => this.data.data.character_images.Length;
+		public SubItemCharacterImage CharacterImageAt(int i) => new SubItemCharacterImage(this.data.data.character_images[i]);
 	}
 }

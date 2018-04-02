@@ -55,8 +55,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Source\Items\ItemAssignment.cs" />
+    <Compile Include="Source\Items\ItemLevelProgression.cs" />
+    <Compile Include="Source\Items\ItemReset.cs" />
+    <Compile Include="Source\Items\ItemReview.cs" />
+    <Compile Include="Source\Items\ItemReviewStatistics.cs" />
+    <Compile Include="Source\Items\ItemStudyMaterial.cs" />
     <Compile Include="Source\Items\ItemSubject.cs" />
+    <Compile Include="Source\Items\ItemSummary.cs" />
     <Compile Include="Source\Items\ItemUser.cs" />
+    <Compile Include="Source\Items\SubItems\SubItemBase.cs" />
+    <Compile Include="Source\Items\SubItems\SubItemCharacterImage.cs" />
+    <Compile Include="Source\Items\SubItems\SubItemMeaning.cs" />
+    <Compile Include="Source\Items\SubItems\SubItemNextReview.cs" />
+    <Compile Include="Source\Items\SubItems\SubItemReading.cs" />
     <Compile Include="Source\JSONObjects\ImageData.cs" />
     <Compile Include="Source\JSONObjects\MeaningData.cs" />
     <Compile Include="Source\JSONObjects\NextReviewsData.cs" />
