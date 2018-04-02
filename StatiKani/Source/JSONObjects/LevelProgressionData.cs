@@ -2,7 +2,7 @@
 
 
 namespace StatiKani.Source.JSONObjects {
-	class LevelProgression {
+	class LevelProgressionData {
 		public DateTime created_at = new DateTime();
 		public int level = -1;
 		public DateTime? unlocked_at = new DateTime();

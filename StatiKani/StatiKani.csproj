@@ -55,30 +55,34 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="APIKeyPromptWindow.xaml.cs">
+    <Compile Include="Source\JSONObjects\ImageData.cs" />
+    <Compile Include="Source\JSONObjects\MeaningData.cs" />
+    <Compile Include="Source\JSONObjects\NextReviewsData.cs" />
+    <Compile Include="Source\JSONObjects\ReadingData.cs" />
+    <Compile Include="Windows\APIKeyPromptWindow.xaml.cs">
       <DependentUpon>APIKeyPromptWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Source\Items\ItemBase.cs" />
     <Compile Include="Source\Items\ItemKanji.cs" />
     <Compile Include="Source\Items\ItemRadical.cs" />
     <Compile Include="Source\Items\ItemVocabulary.cs" />
-    <Compile Include="Source\JSONObjects\Assignment.cs" />
-    <Compile Include="Source\JSONObjects\Collection.cs" />
-    <Compile Include="Source\JSONObjects\LevelProgression.cs" />
-    <Compile Include="Source\JSONObjects\Resource.cs" />
-    <Compile Include="Source\JSONObjects\Pages.cs" />
-    <Compile Include="Source\JSONObjects\Reset.cs" />
-    <Compile Include="Source\JSONObjects\Review.cs" />
-    <Compile Include="Source\JSONObjects\ReviewStatistic.cs" />
-    <Compile Include="Source\JSONObjects\StudyMaterial.cs" />
-    <Compile Include="Source\JSONObjects\Subject.cs" />
-    <Compile Include="Source\JSONObjects\Summary.cs" />
-    <Compile Include="Source\JSONObjects\User.cs" />
-    <Page Include="APIKeyPromptWindow.xaml">
+    <Compile Include="Source\JSONObjects\AssignmentData.cs" />
+    <Compile Include="Source\JSONObjects\CollectionData.cs" />
+    <Compile Include="Source\JSONObjects\LevelProgressionData.cs" />
+    <Compile Include="Source\JSONObjects\ResourceData.cs" />
+    <Compile Include="Source\JSONObjects\PagesData.cs" />
+    <Compile Include="Source\JSONObjects\ResetData.cs" />
+    <Compile Include="Source\JSONObjects\ReviewData.cs" />
+    <Compile Include="Source\JSONObjects\ReviewStatisticData.cs" />
+    <Compile Include="Source\JSONObjects\StudyMaterialData.cs" />
+    <Compile Include="Source\JSONObjects\SubjectData.cs" />
+    <Compile Include="Source\JSONObjects\SummaryData.cs" />
+    <Compile Include="Source\JSONObjects\UserData.cs" />
+    <Page Include="Windows\APIKeyPromptWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -86,7 +90,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>

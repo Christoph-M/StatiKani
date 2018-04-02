@@ -2,7 +2,7 @@
 
 
 namespace StatiKani.Source.JSONObjects {
-	class Review {
+	class ReviewData {
 		public DateTime created_at = new DateTime();
 		public int assignment_id = -1;
 		public int subject_id = -1;

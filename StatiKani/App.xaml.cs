@@ -2,6 +2,7 @@
 using System.Net;
 using System.Web.Script.Serialization;
 using System.Windows;
+using StatiKani.Source.JSONObjects;
 
 
 namespace StatiKani {
@@ -11,10 +12,11 @@ namespace StatiKani {
 	public partial class App : Application {
 
 		private string apiKey = null;
+		private ResourceData<UserData> userData = null;
 
 
 		public void OpenMainWindow() {
-			MainWindow mainWindow = new MainWindow();
+			Windows.MainWindow mainWindow = new Windows.MainWindow();
 			mainWindow.InitializeComponent();
 
 			if (Windows.Count > 0) Windows[0].Close();
@@ -36,6 +38,8 @@ namespace StatiKani {
 
 				reader.Close();
 				response.Close();
+
+				this.userData = new JavaScriptSerializer().Deserialize<ResourceData<UserData>>(data);
 			} catch (System.Exception exception) {
 				return false;
 			}

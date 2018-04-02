@@ -2,7 +2,7 @@
 
 
 namespace StatiKani.Source.JSONObjects {
-	class StudyMaterial {
+	class StudyMaterialData {
 		public DateTime created_at = new DateTime();
 		public int subject_id = -1;
 		public string subject_type = null;

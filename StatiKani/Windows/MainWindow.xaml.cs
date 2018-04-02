@@ -1,8 +1,7 @@
 ﻿using System.Windows;
 using StatiKani.Source.JSONObjects;
 
-
-namespace StatiKani {
+namespace StatiKani.Windows {
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml
 	/// </summary>
@@ -17,39 +16,39 @@ namespace StatiKani {
 		}
 
 		private void UserRequest_Button_Click(object sender, RoutedEventArgs e) {
-			RequestResult_TextBox.Text = this.statiKaniApp.MakeRequest<Resource<User>>("user");
+			RequestResult_TextBox.Text = this.statiKaniApp.MakeRequest<ResourceData<UserData>>("user");
 		}
 
 		private void AssignmentsRequest_Button_Click(object sender, RoutedEventArgs e) {
-			RequestResult_TextBox.Text = this.statiKaniApp.MakeRequest<Collection<Resource<Assignment>>>("assignments");
+			RequestResult_TextBox.Text = this.statiKaniApp.MakeRequest<CollectionData<ResourceData<AssignmentData>>>("assignments");
 		}
 
 		private void SubjectsRequest_Button_Click(object sender, RoutedEventArgs e) {
-			RequestResult_TextBox.Text = this.statiKaniApp.MakeRequest<Collection<Resource<Subject>>>("subjects");
+			RequestResult_TextBox.Text = this.statiKaniApp.MakeRequest<CollectionData<ResourceData<SubjectData>>>("subjects");
 		}
 
 		private void ReviewStatisticsRequest_Button_Click(object sender, RoutedEventArgs e) {
-			RequestResult_TextBox.Text = this.statiKaniApp.MakeRequest<Collection<Resource<ReviewStatistic>>>("review_statistics");
+			RequestResult_TextBox.Text = this.statiKaniApp.MakeRequest<CollectionData<ResourceData<ReviewStatisticData>>>("review_statistics");
 		}
 
 		private void StudyMaterialsRequest_Button_Click(object sender, RoutedEventArgs e) {
-			RequestResult_TextBox.Text = this.statiKaniApp.MakeRequest<Collection<Resource<StudyMaterial>>>("study_materials");
+			RequestResult_TextBox.Text = this.statiKaniApp.MakeRequest<CollectionData<ResourceData<StudyMaterialData>>>("study_materials");
 		}
 
 		private void SummaryRequest_Button_Click(object sender, RoutedEventArgs e) {
-			RequestResult_TextBox.Text = this.statiKaniApp.MakeRequest<Resource<Summary>>("summary");
+			RequestResult_TextBox.Text = this.statiKaniApp.MakeRequest<ResourceData<SummaryData>>("summary");
 		}
 
 		private void ReviewsRequest_Button_Click(object sender, RoutedEventArgs e) {
-			RequestResult_TextBox.Text = this.statiKaniApp.MakeRequest<Collection<Resource<Review>>>("reviews");
+			RequestResult_TextBox.Text = this.statiKaniApp.MakeRequest<CollectionData<ResourceData<ReviewData>>>("reviews");
 		}
 
 		private void LevelProgressionsRequest_Button_Click(object sender, RoutedEventArgs e) {
-			RequestResult_TextBox.Text = this.statiKaniApp.MakeRequest<Collection<Resource<LevelProgression>>>("level_progressions");
+			RequestResult_TextBox.Text = this.statiKaniApp.MakeRequest<CollectionData<ResourceData<LevelProgressionData>>>("level_progressions");
 		}
 
 		private void ResetsRequest_Button_Click(object sender, RoutedEventArgs e) {
-			RequestResult_TextBox.Text = this.statiKaniApp.MakeRequest<Collection<Resource<Reset>>>("resets");
+			RequestResult_TextBox.Text = this.statiKaniApp.MakeRequest<CollectionData<ResourceData<ResetData>>>("resets");
 		}
 	}
 }

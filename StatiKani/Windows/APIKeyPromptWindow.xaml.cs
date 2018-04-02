@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 
 
-namespace StatiKani {
+namespace StatiKani.Windows {
 	/// <summary>
 	/// Interaction logic for APIKeyPromptWindow.xaml
 	/// </summary>
