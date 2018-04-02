@@ -2,7 +2,7 @@
 
 
 namespace StatiKani.Source.JSONObjects {
-	class ResourceData<DataType> {
+	public class ResourceData<DataType> {
 		public int id = -1;
 		public string Object = null;
 		public string url = null;

@@ -2,7 +2,7 @@
 
 
 namespace StatiKani.Source.JSONObjects {
-	class CollectionData<DataType> {
+	public class CollectionData<DataType> {
 		public string Object = null;
 		public string url = null;
 		public PagesData pages = new PagesData();

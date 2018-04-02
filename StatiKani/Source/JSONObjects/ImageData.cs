@@ -2,7 +2,7 @@
 
 
 namespace StatiKani.Source.JSONObjects {
-	class ImageData {
+	public class ImageData {
 		public class MetaData {
 			public Color color = new Color();
 			public string dimensions = null;

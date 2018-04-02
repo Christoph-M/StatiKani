@@ -2,7 +2,7 @@
 
 
 namespace StatiKani.Source.JSONObjects {
-	class UserData {
+	public class UserData {
 		public string username = null;
 		public int level = -1;
 		public int max_level_granted_by_subscription = -1;

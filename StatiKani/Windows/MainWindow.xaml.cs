@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using StatiKani.Source.JSONObjects;
 
+
 namespace StatiKani.Windows {
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml
@@ -13,6 +14,7 @@ namespace StatiKani.Windows {
 		public MainWindow() {
 			InitializeComponent();
 			this.statiKaniApp = (StatiKani.App)Application.Current;
+			this.UserInfo_Label.Content = "User: " + this.statiKaniApp.User.UserName + "\tLevel: " + this.statiKaniApp.User.Level;
 		}
 
 		private void UserRequest_Button_Click(object sender, RoutedEventArgs e) {

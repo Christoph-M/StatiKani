@@ -7,17 +7,18 @@
         mc:Ignorable="d"
         Title="StatiKani" Height="486.111" Width="868.194">
 	<Grid>
-		<Button x:Name="UserRequest_Button" Content="User" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="UserRequest_Button_Click"/>
+		<Button x:Name="UserRequest_Button" Content="User" HorizontalAlignment="Left" Margin="9,47,0,0" VerticalAlignment="Top" Width="75" Click="UserRequest_Button_Click"/>
 		<TextBox x:Name="RequestResult_TextBox" Height="273" Margin="10,173,10,10" TextWrapping="Wrap" Text="TextBox" RenderTransformOrigin="0.5,0.5" VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
-		<Button x:Name="AssignmentsRequest_Button" Content="Assignments" HorizontalAlignment="Left" Margin="90,10,0,0" VerticalAlignment="Top" Width="75" Click="AssignmentsRequest_Button_Click"/>
-		<Button x:Name="SubjectsRequest_Button" Content="Subjects" HorizontalAlignment="Left" Margin="170,10,0,0" VerticalAlignment="Top" Width="75" Click="SubjectsRequest_Button_Click"/>
-		<Button x:Name="ReviewStatisticsRequest_Button" Content="ReviewStats" HorizontalAlignment="Left" Margin="250,10,0,0" VerticalAlignment="Top" Width="75" Click="ReviewStatisticsRequest_Button_Click"/>
-		<Button x:Name="StudyMaterialsRequest_Button" Content="StudyMats" HorizontalAlignment="Left" Margin="330,10,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.101,0.794" Click="StudyMaterialsRequest_Button_Click"/>
-		<TextBox x:Name="ID_TextBox" HorizontalAlignment="Left" Height="23" Margin="730,10,0,0" TextWrapping="Wrap" Text="-1" VerticalAlignment="Top" Width="120" MaxLines="1"/>
-		<Button x:Name="SummaryRequest_Button" Content="Summary" HorizontalAlignment="Left" Margin="410,10,0,0" VerticalAlignment="Top" Width="75" Click="SummaryRequest_Button_Click"/>
-		<Button x:Name="ReviewsRequest_Button" Content="Reviews" HorizontalAlignment="Left" Margin="490,10,0,0" VerticalAlignment="Top" Width="75" Click="ReviewsRequest_Button_Click"/>
-		<Button x:Name="LevelProgressionsRequest_Button" Content="LevelProgs" HorizontalAlignment="Left" Margin="570,10,0,0" VerticalAlignment="Top" Width="75" Click="LevelProgressionsRequest_Button_Click"/>
-		<Button x:Name="ResetsRequest_Button" Content="Resets" HorizontalAlignment="Left" Margin="650,10,0,0" VerticalAlignment="Top" Width="75" Click="ResetsRequest_Button_Click"/>
+		<Button x:Name="AssignmentsRequest_Button" Content="Assignments" HorizontalAlignment="Left" Margin="89,47,0,0" VerticalAlignment="Top" Width="75" Click="AssignmentsRequest_Button_Click"/>
+		<Button x:Name="SubjectsRequest_Button" Content="Subjects" HorizontalAlignment="Left" Margin="169,47,0,0" VerticalAlignment="Top" Width="75" Click="SubjectsRequest_Button_Click"/>
+		<Button x:Name="ReviewStatisticsRequest_Button" Content="ReviewStats" HorizontalAlignment="Left" Margin="249,47,0,0" VerticalAlignment="Top" Width="75" Click="ReviewStatisticsRequest_Button_Click"/>
+		<Button x:Name="StudyMaterialsRequest_Button" Content="StudyMats" HorizontalAlignment="Left" Margin="329,47,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.101,0.794" Click="StudyMaterialsRequest_Button_Click"/>
+		<TextBox x:Name="ID_TextBox" HorizontalAlignment="Left" Height="23" Margin="729,47,0,0" TextWrapping="Wrap" Text="-1" VerticalAlignment="Top" Width="120" MaxLines="1"/>
+		<Button x:Name="SummaryRequest_Button" Content="Summary" HorizontalAlignment="Left" Margin="409,47,0,0" VerticalAlignment="Top" Width="75" Click="SummaryRequest_Button_Click"/>
+		<Button x:Name="ReviewsRequest_Button" Content="Reviews" HorizontalAlignment="Left" Margin="489,47,0,0" VerticalAlignment="Top" Width="75" Click="ReviewsRequest_Button_Click"/>
+		<Button x:Name="LevelProgressionsRequest_Button" Content="LevelProgs" HorizontalAlignment="Left" Margin="569,47,0,0" VerticalAlignment="Top" Width="75" Click="LevelProgressionsRequest_Button_Click"/>
+		<Button x:Name="ResetsRequest_Button" Content="Resets" HorizontalAlignment="Left" Margin="649,47,0,0" VerticalAlignment="Top" Width="75" Click="ResetsRequest_Button_Click"/>
+		<Label x:Name="UserInfo_Label" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
 
 	</Grid>
 </Window>

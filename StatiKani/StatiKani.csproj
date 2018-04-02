@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Source\Items\ItemSubject.cs" />
+    <Compile Include="Source\Items\ItemUser.cs" />
     <Compile Include="Source\JSONObjects\ImageData.cs" />
     <Compile Include="Source\JSONObjects\MeaningData.cs" />
     <Compile Include="Source\JSONObjects\NextReviewsData.cs" />
@@ -63,9 +65,9 @@
       <DependentUpon>APIKeyPromptWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Source\Items\ItemBase.cs" />
-    <Compile Include="Source\Items\ItemKanji.cs" />
-    <Compile Include="Source\Items\ItemRadical.cs" />
-    <Compile Include="Source\Items\ItemVocabulary.cs" />
+    <Compile Include="Source\Items\ItemSubjectKanji.cs" />
+    <Compile Include="Source\Items\ItemSubjectRadical.cs" />
+    <Compile Include="Source\Items\ItemSubjectVocabulary.cs" />
     <Compile Include="Source\JSONObjects\AssignmentData.cs" />
     <Compile Include="Source\JSONObjects\CollectionData.cs" />
     <Compile Include="Source\JSONObjects\LevelProgressionData.cs" />
