@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="APIKeyPromptWindow.xaml.cs">
+      <DependentUpon>APIKeyPromptWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Source\Items\ItemBase.cs" />
     <Compile Include="Source\Items\ItemKanji.cs" />
     <Compile Include="Source\Items\ItemRadical.cs" />
@@ -71,6 +74,10 @@
     <Compile Include="Source\JSONObjects\Subject.cs" />
     <Compile Include="Source\JSONObjects\Summary.cs" />
     <Compile Include="Source\JSONObjects\User.cs" />
+    <Page Include="APIKeyPromptWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
