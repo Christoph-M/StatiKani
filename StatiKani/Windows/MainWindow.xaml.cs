@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Windows;
 using StatiKani.Source.Items;
 using StatiKani.Source.JSONObjects;
@@ -21,43 +20,43 @@ namespace StatiKani.Windows {
 		}
 
 		private void UserRequest_Button_Click(object sender, RoutedEventArgs e) {
-			ItemUser userItem = (ItemUser)this.statiKaniApp.MakeResourceRequest("user", EJsonDataObjectType.User);
+			ItemUser userItem = this.statiKaniApp.MakeResourceRequest<ItemUser>(EJsonDataObjectType.User);
 		}
 
 		private void AssignmentsRequest_Button_Click(object sender, RoutedEventArgs e) {
-			this.statiKaniApp.MakeCollectionRequest("assignments", EJsonDataObjectType.Assignments);
+			this.statiKaniApp.MakeCollectionRequest(EJsonDataObjectType.Assignments);
 		}
 
 		private void SubjectsRequest_Button_Click(object sender, RoutedEventArgs e) {
-			this.statiKaniApp.MakeCollectionRequest("subjects", EJsonDataObjectType.Subjects);
+			this.statiKaniApp.MakeCollectionRequest(EJsonDataObjectType.Subjects);
 		}
 
 		private void ReviewStatisticsRequest_Button_Click(object sender, RoutedEventArgs e) {
-			this.statiKaniApp.MakeCollectionRequest("review_statistics", EJsonDataObjectType.ReviewStatistics);
+			this.statiKaniApp.MakeCollectionRequest(EJsonDataObjectType.ReviewStatistics);
 		}
 
 		private void StudyMaterialsRequest_Button_Click(object sender, RoutedEventArgs e) {
-			this.statiKaniApp.MakeCollectionRequest("study_materials", EJsonDataObjectType.StudyMaterials);
+			this.statiKaniApp.MakeCollectionRequest(EJsonDataObjectType.StudyMaterials);
 		}
 
 		private void SummaryRequest_Button_Click(object sender, RoutedEventArgs e) {
-			this.statiKaniApp.MakeResourceRequest("summary", EJsonDataObjectType.Summary);
+			this.statiKaniApp.MakeResourceRequest<ItemSummary>(EJsonDataObjectType.Summary);
 		}
 
 		private void ReviewsRequest_Button_Click(object sender, RoutedEventArgs e) {
-			this.statiKaniApp.MakeCollectionRequest("reviews", EJsonDataObjectType.Reviews);
+			this.statiKaniApp.MakeCollectionRequest(EJsonDataObjectType.Reviews);
 		}
 
 		private void LevelProgressionsRequest_Button_Click(object sender, RoutedEventArgs e) {
-			this.statiKaniApp.MakeCollectionRequest("level_progressions", EJsonDataObjectType.LevelProgression);
+			this.statiKaniApp.MakeCollectionRequest(EJsonDataObjectType.LevelProgressions);
 		}
 
 		private void ResetsRequest_Button_Click(object sender, RoutedEventArgs e) {
-			this.statiKaniApp.MakeCollectionRequest("resets", EJsonDataObjectType.Resets);
+			this.statiKaniApp.MakeCollectionRequest(EJsonDataObjectType.Resets);
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e) {
-			ItemCollection data = this.statiKaniApp.MakeCollectionRequest("reviews", EJsonDataObjectType.Reviews);
+			ItemCollection data = this.statiKaniApp.MakeCollectionRequest(EJsonDataObjectType.Reviews);
 			ItemReview[] itemReviews = data.ItemData.Cast<ItemReview>().ToArray();
 		}
 	}

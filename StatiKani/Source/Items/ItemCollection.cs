@@ -49,7 +49,7 @@ namespace StatiKani.Source.Items {
 						this.datas[i] = new ItemReview(reviewCollection.data[i]);
 					}
 				} break;
-				case EJsonDataObjectType.LevelProgression: {
+				case EJsonDataObjectType.LevelProgressions: {
 					LevelProgressionCollectionData levelProgressionCollection = (LevelProgressionCollectionData)collection;
 					this.datas = new ItemBase[levelProgressionCollection.data.Length];
 					for (int i = 0; i < this.datas.Length; ++i) {
@@ -83,7 +83,7 @@ namespace StatiKani.Source.Items {
 				case EJsonDataObjectType.ReviewStatistics: return new ItemCollection(new JavaScriptSerializer().Deserialize<ReviewStatisticCollectionData>(data), jsonDataObjectType);
 				case EJsonDataObjectType.StudyMaterials: return new ItemCollection(new JavaScriptSerializer().Deserialize<StudyMaterialCollectionData>(data), jsonDataObjectType);
 				case EJsonDataObjectType.Reviews: return new ItemCollection(new JavaScriptSerializer().Deserialize<ReviewCollectionData>(data), jsonDataObjectType);
-				case EJsonDataObjectType.LevelProgression: return new ItemCollection(new JavaScriptSerializer().Deserialize<LevelProgressionCollectionData>(data), jsonDataObjectType);
+				case EJsonDataObjectType.LevelProgressions: return new ItemCollection(new JavaScriptSerializer().Deserialize<LevelProgressionCollectionData>(data), jsonDataObjectType);
 				case EJsonDataObjectType.Resets: return new ItemCollection(new JavaScriptSerializer().Deserialize<ResetCollectionData>(data), jsonDataObjectType);
 				default: throw new ArgumentOutOfRangeException(nameof(jsonDataObjectType), jsonDataObjectType, null);
 			}

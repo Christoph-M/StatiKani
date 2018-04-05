@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Net;
 using System.Web.Script.Serialization;
 using System.Windows;
@@ -58,9 +59,14 @@ namespace StatiKani {
 			return data == string.Empty ? default(ItemCollection) : ItemCollection.CollectionFactory(jsonDataObjectType, data);
 		}
 
-		public ItemCollection MakeCollectionRequest(string endPoint, EJsonDataObjectType jsonDataObjectType) {
+		public ItemCollection MakeCollectionRequest(EJsonDataObjectType jsonDataObjectType) {
+			string endPoint = this.GetEndPoint(jsonDataObjectType);
 			string data = this.MakeRequest("https://www.wanikani.com/api/v2/" + endPoint);
 			return data == string.Empty ? default(ItemCollection) : ItemCollection.CollectionFactory(jsonDataObjectType, data);
+		}
+
+		public T MakeFullUrlResourceRequest<T>(string url, EJsonDataObjectType jsonDataObjectType) where T : ItemBase {
+			return (T)this.MakeFullUrlResourceRequest(url, jsonDataObjectType);
 		}
 
 		public ItemBase MakeFullUrlResourceRequest(string url, EJsonDataObjectType jsonDataObjectType) {
@@ -68,9 +74,29 @@ namespace StatiKani {
 			return data == string.Empty ? default(ItemBase) : ItemBase.ItemFactory(jsonDataObjectType, data);
 		}
 
-		public ItemBase MakeResourceRequest(string endPoint, EJsonDataObjectType jsonDataObjectType) {
+		public T MakeResourceRequest<T>(EJsonDataObjectType jsonDataObjectType) where T : ItemBase {
+			return (T)this.MakeResourceRequest(jsonDataObjectType);
+		}
+
+		public ItemBase MakeResourceRequest(EJsonDataObjectType jsonDataObjectType) {
+			string endPoint = this.GetEndPoint(jsonDataObjectType);
 			string data = this.MakeRequest("https://www.wanikani.com/api/v2/" + endPoint);
 			return data == string.Empty ? default(ItemBase) : ItemBase.ItemFactory(jsonDataObjectType, data);
+		}
+
+		private string GetEndPoint(EJsonDataObjectType jsonDataObjectType) {
+			switch (jsonDataObjectType) {
+				case EJsonDataObjectType.User: return RequestEndPoint.User;
+				case EJsonDataObjectType.Subjects: return RequestEndPoint.Subjects;
+				case EJsonDataObjectType.Assignments: return RequestEndPoint.Assignments;
+				case EJsonDataObjectType.ReviewStatistics: return RequestEndPoint.ReviewStatistics;
+				case EJsonDataObjectType.StudyMaterials: return RequestEndPoint.StudyMaterials;
+				case EJsonDataObjectType.Summary: return RequestEndPoint.Summary;
+				case EJsonDataObjectType.Reviews: return RequestEndPoint.Reviews;
+				case EJsonDataObjectType.LevelProgressions: return RequestEndPoint.LevelProgressions;
+				case EJsonDataObjectType.Resets: return RequestEndPoint.Resets;
+				default: throw new ArgumentOutOfRangeException(nameof(jsonDataObjectType), jsonDataObjectType, null);
+			}
 		}
 
 		private string MakeRequest(string url) {

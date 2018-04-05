@@ -27,7 +27,7 @@ namespace StatiKani.Source.Items {
 				case EJsonDataObjectType.StudyMaterials: return new ItemStudyMaterial(new JavaScriptSerializer().Deserialize<StudyMaterialData>(data));
 				case EJsonDataObjectType.Summary: return new ItemSummary(new JavaScriptSerializer().Deserialize<SummaryData>(data));
 				case EJsonDataObjectType.Reviews: return new ItemReview(new JavaScriptSerializer().Deserialize<ReviewData>(data));
-				case EJsonDataObjectType.LevelProgression: return new ItemLevelProgression(new JavaScriptSerializer().Deserialize<LevelProgressionData>(data));
+				case EJsonDataObjectType.LevelProgressions: return new ItemLevelProgression(new JavaScriptSerializer().Deserialize<LevelProgressionData>(data));
 				case EJsonDataObjectType.Resets: return new ItemReset(new JavaScriptSerializer().Deserialize<ResetData>(data));
 				default: throw new ArgumentOutOfRangeException(nameof(jsonDataObjectType), jsonDataObjectType, null);
 			}
