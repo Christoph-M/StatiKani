@@ -19,6 +19,7 @@
 		<Button x:Name="LevelProgressionsRequest_Button" Content="LevelProgs" HorizontalAlignment="Left" Margin="569,47,0,0" VerticalAlignment="Top" Width="75" Click="LevelProgressionsRequest_Button_Click"/>
 		<Button x:Name="ResetsRequest_Button" Content="Resets" HorizontalAlignment="Left" Margin="649,47,0,0" VerticalAlignment="Top" Width="75" Click="ResetsRequest_Button_Click"/>
 		<Label x:Name="UserInfo_Label" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+		<Button Content="Button" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
 	</Grid>
 </Window>

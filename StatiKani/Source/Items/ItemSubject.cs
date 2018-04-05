@@ -4,16 +4,20 @@ using StatiKani.Source.JSONObjects;
 
 
 namespace StatiKani.Source.Items {
-	public class ItemSubject : ItemBase<SubjectData> {
-		public ItemSubject(ResourceData<SubjectData> data) : base(data) { }
+	public class ItemSubject : ItemBase {
+
+		protected SubjectData subjectData;
 
 
-		public int Level => this.data.data.level;
-		public DateTime CreatedAt => this.data.data.created_at;
-		public string Characters => this.data.data.characters;
-		public int MeaningCount => this.data.data.meanings.Length;
-		public SubItemMeaning MeaningAt(int i) => new SubItemMeaning(this.data.data.meanings[i]);
-		public string DocumentUrl => this.data.data.document_url;
-		public DateTime HiddenAt => this.data.data.hidden_at ?? new DateTime();
+		public ItemSubject(ResourceData data) : base(data) { this.subjectData = (SubjectData)data; }
+
+
+		public int Level => this.subjectData.data.level;
+		public DateTime CreatedAt => this.subjectData.data.created_at;
+		public string Characters => this.subjectData.data.characters;
+		public int MeaningCount => this.subjectData.data.meanings.Length;
+		public SubItemMeaning MeaningAt(int i) => new SubItemMeaning(this.subjectData.data.meanings[i]);
+		public string DocumentUrl => this.subjectData.data.document_url;
+		public DateTime HiddenAt => this.subjectData.data.hidden_at ?? new DateTime();
 	}
 }

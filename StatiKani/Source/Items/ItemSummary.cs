@@ -1,16 +1,19 @@
-﻿using System;
-using StatiKani.Source.Items.SubItems;
+﻿using StatiKani.Source.Items.SubItems;
 using StatiKani.Source.JSONObjects;
 
 
 namespace StatiKani.Source.Items {
-	public class ItemSummary : ItemBase<SummaryData> {
-		public ItemSummary(ResourceData<SummaryData> data) : base(data) { }
+	public class ItemSummary : ItemBase {
+
+		protected SummaryData summaryData;
 
 
-		public int ReviewCount => this.data.data.reviews.Length;
-		public int LessonCount => this.data.data.lessons.Length;
-		public SubItemNextReview ReviewAt(int i) => new SubItemNextReview(this.data.data.reviews[i]);
-		public SubItemNextReview LessonAt(int i) => new SubItemNextReview(this.data.data.lessons[i]);
+		public ItemSummary(ResourceData data) : base(data) { this.summaryData = (SummaryData)data; }
+
+
+		public int ReviewCount => this.summaryData.data.reviews.Length;
+		public int LessonCount => this.summaryData.data.lessons.Length;
+		public SubItemNextReview ReviewAt(int i) => new SubItemNextReview(this.summaryData.data.reviews[i]);
+		public SubItemNextReview LessonAt(int i) => new SubItemNextReview(this.summaryData.data.lessons[i]);
 	}
 }

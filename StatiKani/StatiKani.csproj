@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Source\Items\ItemAssignment.cs" />
+    <Compile Include="Source\Items\ItemCollection.cs" />
     <Compile Include="Source\Items\ItemLevelProgression.cs" />
     <Compile Include="Source\Items\ItemReset.cs" />
     <Compile Include="Source\Items\ItemReview.cs" />
@@ -69,10 +70,19 @@
     <Compile Include="Source\Items\SubItems\SubItemMeaning.cs" />
     <Compile Include="Source\Items\SubItems\SubItemNextReview.cs" />
     <Compile Include="Source\Items\SubItems\SubItemReading.cs" />
+    <Compile Include="Source\JSONObjects\AssignmentCollectionData.cs" />
     <Compile Include="Source\JSONObjects\ImageData.cs" />
+    <Compile Include="Source\JSONObjects\EJsonDataObjectType.cs" />
+    <Compile Include="Source\JSONObjects\LevelProgressionCollectionData.cs" />
     <Compile Include="Source\JSONObjects\MeaningData.cs" />
     <Compile Include="Source\JSONObjects\NextReviewsData.cs" />
     <Compile Include="Source\JSONObjects\ReadingData.cs" />
+    <Compile Include="Source\JSONObjects\ResetCollectionData.cs" />
+    <Compile Include="Source\JSONObjects\ReviewCollectionData.cs" />
+    <Compile Include="Source\JSONObjects\ReviewStatisticCollectionData.cs" />
+    <Compile Include="Source\JSONObjects\StudyMaterialCollectionData.cs" />
+    <Compile Include="Source\JSONObjects\SubjectCollectionData.cs" />
+    <Compile Include="Source\Misc\Utilites.cs" />
     <Compile Include="Windows\APIKeyPromptWindow.xaml.cs">
       <DependentUpon>APIKeyPromptWindow.xaml</DependentUpon>
     </Compile>

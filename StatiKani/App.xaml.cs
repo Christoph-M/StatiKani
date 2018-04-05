@@ -30,7 +30,7 @@ namespace StatiKani {
 
 		public bool TestAPIKey(string apiKey) {
 			try {
-				WebRequest request = WebRequest.Create("https://www.wanikani.com/api/v2/user");
+				WebRequest request = WebRequest.Create("https://api.wanikani.com/v2/user");
 				request.Headers.Add(HttpRequestHeader.Authorization, "Bearer " + apiKey);
 
 				WebResponse response = request.GetResponse();
@@ -43,7 +43,7 @@ namespace StatiKani {
 				reader.Close();
 				response.Close();
 
-				this.user = new ItemUser(new JavaScriptSerializer().Deserialize<ResourceData<UserData>>(data));
+				this.user = new ItemUser(new JavaScriptSerializer().Deserialize<UserData>(data));
 			} catch (System.Exception exception) {
 				return false;
 			}
@@ -53,9 +53,29 @@ namespace StatiKani {
 			return true;
 		}
 
-		public string MakeRequest<DataType>(string endPoint) {
+		public ItemCollection MakeFullUrlCollectionRequest(string url, EJsonDataObjectType jsonDataObjectType) {
+			string data = this.MakeRequest(url);
+			return data == string.Empty ? default(ItemCollection) : ItemCollection.CollectionFactory(jsonDataObjectType, data);
+		}
+
+		public ItemCollection MakeCollectionRequest(string endPoint, EJsonDataObjectType jsonDataObjectType) {
+			string data = this.MakeRequest("https://www.wanikani.com/api/v2/" + endPoint);
+			return data == string.Empty ? default(ItemCollection) : ItemCollection.CollectionFactory(jsonDataObjectType, data);
+		}
+
+		public ItemBase MakeFullUrlResourceRequest(string url, EJsonDataObjectType jsonDataObjectType) {
+			string data = this.MakeRequest(url);
+			return data == string.Empty ? default(ItemBase) : ItemBase.ItemFactory(jsonDataObjectType, data);
+		}
+
+		public ItemBase MakeResourceRequest(string endPoint, EJsonDataObjectType jsonDataObjectType) {
+			string data = this.MakeRequest("https://www.wanikani.com/api/v2/" + endPoint);
+			return data == string.Empty ? default(ItemBase) : ItemBase.ItemFactory(jsonDataObjectType, data);
+		}
+
+		private string MakeRequest(string url) {
 			try {
-				WebRequest request = WebRequest.Create("https://www.wanikani.com/api/v2/" + endPoint);
+				WebRequest request = WebRequest.Create(url);
 				request.Headers.Add(HttpRequestHeader.Authorization, "Bearer " + this.apiKey);
 
 				WebResponse response = request.GetResponse();
@@ -68,10 +88,11 @@ namespace StatiKani {
 				reader.Close();
 				response.Close();
 
-				DataType jsonObjs = new JavaScriptSerializer().Deserialize<DataType>(data);
 				return data;
-			} catch (System.Exception exception) {
-				return exception.Message;
+			}
+			catch (System.Exception exception) {
+				MessageBox.Show(exception.Message);
+				return string.Empty;
 			}
 		}
 	}

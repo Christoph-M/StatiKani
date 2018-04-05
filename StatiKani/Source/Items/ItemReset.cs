@@ -3,13 +3,17 @@ using StatiKani.Source.JSONObjects;
 
 
 namespace StatiKani.Source.Items {
-	public class ItemReset : ItemBase<ResetData> {
-		public ItemReset(ResourceData<ResetData> data) : base(data) { }
+	public class ItemReset : ItemBase {
+
+		protected ResetData resetData;
 
 
-		public DateTime CreatedAt => this.data.data.created_at;
-		public int OriginalLevel => this.data.data.original_level;
-		public int TargetLevel => this.data.data.target_level;
-		public DateTime ConfirmedAt => this.data.data.confirmed_at;
+		public ItemReset(ResourceData data) : base(data) { this.resetData = (ResetData)data; }
+
+
+		public DateTime CreatedAt => this.resetData.data.created_at;
+		public int OriginalLevel => this.resetData.data.original_level;
+		public int TargetLevel => this.resetData.data.target_level;
+		public DateTime ConfirmedAt => this.resetData.data.confirmed_at;
 	}
 }

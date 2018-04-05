@@ -4,12 +4,12 @@ using StatiKani.Source.JSONObjects;
 
 namespace StatiKani.Source.Items {
 	public class ItemSubjectVocabulary : ItemSubject {
-		public ItemSubjectVocabulary(ResourceData<SubjectData> data) : base(data) { }
+		public ItemSubjectVocabulary(SubjectData data) : base(data) { }
 
 
-		public int ReadingCount => this.data.data.readings.Length;
-		public SubItemReading ReadingAt(int i) => new SubItemReading(this.data.data.readings[i]);
-		public string[] PartsOfSpeech => this.data.data.parts_of_speech;
-		public int[] SubjectComponentIDs => this.data.data.subject_component_ids;
+		public int ReadingCount => this.subjectData.data.readings.Length;
+		public SubItemReading ReadingAt(int i) => new SubItemReading(this.subjectData.data.readings[i]);
+		public string[] PartsOfSpeech => this.subjectData.data.parts_of_speech;
+		public int[] SubjectComponentIDs => this.subjectData.data.subject_component_ids;
 	}
 }
